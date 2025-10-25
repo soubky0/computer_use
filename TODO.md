@@ -1,0 +1,5 @@
+- [x] add db config
+- [x] add running migrations to docker
+- [ ] create apis
+- [ ] add vnc connection
+- [ ] write readme

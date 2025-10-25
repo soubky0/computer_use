@@ -7,9 +7,10 @@ COPY ./pyproject.toml /code/pyproject.toml
 COPY ./app /code/app
 
 RUN pip install --no-cache-dir uv
-RUN uv pip install "fastapi[standard]" --system
 RUN uv sync
 
 EXPOSE 8000
 
-CMD ["fastapi", "run", "app/main.py"]
+RUN uv run alembic upgrade head
+
+CMD ["uv","run","fastapi", "run", "app/main.py"]
